@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사용자 경험을 구현하는 프론트엔드 개발자</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg?v=2">
+    <link rel="shortcut icon" href="favicon.svg?v=2">
+    <link rel="apple-touch-icon" href="favicon.svg?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -15,7 +17,12 @@
 
         <nav class="heads__nav" aria-label="주요 탐색">
             <a class="heads__brand" href="#sect-top">KIM INTRO</a>
-            <div class="heads__links">
+            <button class="heads__menu-toggle" id="navToggle" type="button" aria-label="메뉴 열기" aria-controls="headsMenu" aria-expanded="false">
+                <span class="heads__menu-line"></span>
+                <span class="heads__menu-line"></span>
+                <span class="heads__menu-line"></span>
+            </button>
+            <div class="heads__links" id="headsMenu">
                 <a href="#sect-journey">Journey</a>
                 <a href="#sect-projects">Projects</a>
                 <a href="#sect-strengths">Strengths</a>
@@ -182,32 +189,35 @@
             <article>
                 <div class="sect__grid-panel">
                 <h3>단계적 문제 해결력</h3>
-                <p>
+                <p class="sect__grid-detail">
                     가계부 앱 개발 중 계산 로직과 화면 출력이 어긋났을 때, 무작정 코드를 바꾸지 않고 데이터 흐름을
                     역추적하며 원인을 좁혀 갔습니다. 그 결과 타입 지정 오류와 오타를 찾아 수정했고, 정상 동작을
                     복구했습니다.
                 </p>
+                <p class="sect__grid-summary">문제 원인을 단계적으로 좁혀 정확하게 해결합니다.</p>
                 </div>
             </article>
 
             <article>
                 <div class="sect__grid-panel">
                 <h3>소통 능력</h3>
-                <p>
+                <p class="sect__grid-detail">
                     패션 매장에서 환불 규정으로 감정이 격해진 고객을 응대할 때도 먼저 상황을 진정시키고, 끝까지
                     경청한 뒤 현실적인 대안을 제시했습니다. 기술 협업에서도 같은 태도로 상대의 맥락을 이해하고
                     조율하는 데 강점이 있습니다.
                 </p>
+                <p class="sect__grid-summary">상대의 맥락을 이해하고 끝까지 조율하며 소통합니다.</p>
                 </div>
             </article>
 
             <aside>
                 <div class="sect__grid-panel sect__grid-panel--accent">
                 <h3>보완 중인 점</h3>
-                <p>
+                <p class="sect__grid-detail">
                     디테일에 몰입해 초기 속도가 늦어지는 경향이 있어, 현재는 핵심 기능을 먼저 완성하고 이후 UI와
                     예외 처리를 개선하는 방식으로 작업 순서를 관리하고 있습니다.
                 </p>
+                <p class="sect__grid-summary">핵심 기능을 먼저 완성하고 디테일은 뒤에서 정교화합니다.</p>
                 <span class="sect__grid-panel-badge">Agile Improvement</span>
                 </div>
             </aside>
@@ -324,7 +334,6 @@
 
             <div class="foot__bottom">
                 <p>© <span id="currentYear"></span> Portfolio Introduction Page</p>
-                <p>Structure, Flow, Quality</p>
             </div>
         </div>
     </footer>
